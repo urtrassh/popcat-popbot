@@ -41,7 +41,7 @@
         /** Add JWT token after first iteration */
         jwt = jwt ? "&token="+jwt : "";
         /** Send API request */
-        $.ajax({ url: `https://stats.popcat.click/pop?pop_count=800&captcha_token=${recaptcha}${jwt}`, crossDomain: true })
+        $.ajax({ url: `https://stats.popcat.click/pop?pop_count=1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&captcha_token=${recaptcha}${jwt}`, crossDomain: true })
             .then(function(e) {
                 /** Store new JWT token */
                 jwt = e.Token;
@@ -50,7 +50,7 @@
                 /** Increment pop count */
                 pop(num = isNaN(num) ? 0 : num);
                 /** Get country code */
-                country = e.Location.Code=="MY" ? "Malaysia" : e.Location.Code;
+                country = e.Location.Code=="MY" ? "UAE" : e.Location.Code;
                 /** Log success message */
                 console.log(`%cSuccessfully sent 800 clicks to ${country}. Total: ${(num+800).toLocaleString("en")}`, "color:green");
                 console.log('Waiting for next request in 30s..');
